@@ -1,0 +1,11 @@
+<Chart
+  type={"pie"}
+  width={300}
+  height={300}
+  showTooltips={true}
+  data={{
+    "React": 2,
+    "Relay": 12,
+    "GraphQL": 5,
+  }}
+/>

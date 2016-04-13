@@ -1,0 +1,21 @@
+class PreExistingChart {
+    constructor(el, props) {
+        this.el = el;
+        this.props = props;
+    }
+    create(data) {
+        // Create your chart
+    }
+    update(data) {
+        // Update your chart
+    }
+    unmount() {
+        this.el.remove();
+    }
+}
+
+<Chart
+    type={"custom"}
+    customChart={PreExistingChart}
+    data={data}
+/>

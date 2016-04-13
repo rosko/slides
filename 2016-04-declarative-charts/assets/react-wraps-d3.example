@@ -1,0 +1,11 @@
+class Chart extends Component {
+  componentDidMount() {
+    d3RendersSomething();
+  },
+  componentWillReceiveProps() {
+    d3UpdatesSomething();
+  },
+  render() {
+    return <svg />;
+  }
+}
