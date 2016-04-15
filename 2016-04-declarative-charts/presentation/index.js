@@ -4,7 +4,7 @@ const _ = require('lodash'),
     React = require('react');
 
 const {
-    Appear, Code, CodePane, Deck, Fill, Heading, Image, List, ListItem,
+    Appear, Code, CodePane, Deck, Fill, Heading, Image, Link, List, ListItem,
     Layout, Slide, Spectacle, Text
 } = require('spectacle');
 
@@ -118,7 +118,11 @@ class Presentation extends React.Component {
                         charts using React + D3
                     </Heading>
                     <Text margin='1em 0 0 0'>Alexey Volkov</Text>
-                    <Text margin='1em 0 0 0'>rosko.github.io/slides/</Text>
+                    <Text margin='1em 0 0 0'>
+                        <Link href='https://rosko.github.io/slides/'>
+                            https://rosko.github.io/slides/
+                        </Link>
+                    </Text>
                     <Image width='45%' src={images.logo}/>
                 </Slide>
                 <Slide bgColor='quartenary'>
@@ -222,13 +226,10 @@ class Presentation extends React.Component {
                 </Slide>
                 <Slide {...defaultSlideProps}>
                     <CodePane
-                        style={{fontSize:'3vh', height: '70vh'}}
+                        style={{fontSize:'3vh', lineHeight: 1, width: '90vw', maxHeight: '70vh'}}
                         lang='javascript'
                         source={require('raw!../assets/google-charts.example')}
                     />
-                </Slide>
-                <Slide {...defaultSlideProps}>
-                    <Image width='100%' src={images.googleLine}/>
                 </Slide>
                 <Slide>
                     <Heading caps>Highcharts</Heading>
@@ -236,7 +237,7 @@ class Presentation extends React.Component {
                 </Slide>
                 <Slide {...defaultSlideProps}>
                     <CodePane
-                        style={{fontSize:'3vh', height: '70vh'}}
+                        style={{fontSize:'3vh', lineHeight: 1, width: '90vw', maxHeight: '70vh'}}
                         lang='javascript'
                         source={require('raw!../assets/highcharts.example')}
                     />
@@ -247,7 +248,7 @@ class Presentation extends React.Component {
                 </Slide>
                 <Slide {...defaultSlideProps}>
                     <CodePane
-                        style={{fontSize:'3vh', height: '70vh'}}
+                        style={{fontSize:'3vh', lineHeight: 1, width: '90vw', maxHeight: '70vh'}}
                         lang='javascript'
                         source={require('raw!../assets/d3.example')}
                     />
@@ -345,7 +346,7 @@ class Presentation extends React.Component {
                     <Heading caps>Remark #1</Heading>
                     <Text>Usually React + D3 means:</Text>
                     <CodePane
-                        style={{fontSize:'3vh', height: '70vh'}}
+                        style={{fontSize:'3vh', lineHeight: 1, width: '90vw', maxHeight: '70vh'}}
                         lang='jsx'
                         source={require('raw!../assets/react-and-d3-1.example')}
                     />
@@ -384,7 +385,7 @@ class Presentation extends React.Component {
                     <Heading caps>Remark #3</Heading>
                     <Text>Let's take a look under the hood</Text>
                     <CodePane
-                        style={{fontSize:'3vh', width: '90vw', maxHeight: '70vh'}}
+                        style={{fontSize:'3vh', lineHeight: 1, width: '90vw', maxHeight: '70vh'}}
                         lang='html'
                         source={require('raw!../assets/d3-output.example')}
                     />
@@ -430,7 +431,7 @@ class Presentation extends React.Component {
                         source={require('raw!../assets/react-wraps-d3.example')}
                     />
                 </Slide>
-                <Slide>
+                <Slide {...defaultSlideProps}>
                     <Heading>d3-react-squared</Heading>
                     <GithubStars repo='bgrsquared/d3-react-squared'/>
                     <CodePane
@@ -527,9 +528,9 @@ class Presentation extends React.Component {
                     <ReactD3Components />
                 </Slide>
                 <Slide {...defaultSlideProps}>
-                    <Heading fit>react-d3-components / PieChart</Heading>
+                    <Heading fit>react-d3-components &rarr; PieChart</Heading>
                     <CodePane
-                        style={{fontSize:'2.5vh', lineHeight: 1, width: '90vw', maxHeight: '60vh'}}
+                        style={{fontSize:'3vh', lineHeight: 1, width: '90vw', maxHeight: '60vh'}}
                         lang='jsx'
                         source={require('raw!../assets/react-d3-components-2.example')}
                     />
@@ -621,12 +622,12 @@ class Presentation extends React.Component {
 
                 <Slide bgColor='quartenary' transition={['fade']}>
                     <Heading><Code>npm install rumble-charts</Code></Heading>
-                    <Heading size={2}>rosko.github.io/slides/</Heading>
+                    <Heading size={2} fit>https://rosko.github.io/slides/</Heading>
                     <Heading fit textColor='primary'>Questions!</Heading>
                 </Slide>
                 <Slide id='last' bgColor='quartenary' transition={['fade']}>
                     <Heading><Code>npm install --save rumble-charts</Code></Heading>
-                    <Heading size={2}>rosko.github.io/slides/</Heading>
+                    <Heading size={2} fit>https://rosko.github.io/slides/</Heading>
                     <Heading fit textColor='primary'>Questions!</Heading>
                 </Slide>
 
