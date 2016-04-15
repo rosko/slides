@@ -1,0 +1,18 @@
+const series = [{
+    data: [1, 2, 4]
+}];
+
+class Demo extends Component {
+  render() {
+    return <Chart width={400} height={400} series={series}>
+      <Transform method={['transpose', 'stack']}>
+        <Pies
+          combined={true} barWidth='50%'
+          colors={[['red', 'yellow'], 'green', 'blue']}
+        />
+      </Transform>
+    </Chart>;
+  }
+}
+
+return <Demo />;

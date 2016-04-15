@@ -1,11 +1,10 @@
 'use strict';
 
 const _ = require('lodash'),
-    React = require('react'),
-    Frame = require('react-frame-component');
+    React = require('react');
 
 const {
-    Appear, CodePane, Deck, Fill, Fit, Heading, Image, List, ListItem,
+    Appear, Code, CodePane, Deck, Fill, Heading, Image, List, ListItem,
     Layout, Slide, Spectacle, Text
 } = require('spectacle');
 
@@ -23,7 +22,14 @@ const IframeExample = require('../components/IframeExample'),
     HighCharts = require('../assets/highcharts'),
     D3 = require('../assets/d3');
 
-const D3ReactSquared = require('../assets/d3-react-squared');
+const D3ReactSquared = require('../assets/d3-react-squared'),
+    ReactD3Components = require('../assets/react-d3-components'),
+    ReactD3 = require('../assets/react-d3'),
+    Victory = require('../assets/victory');
+
+const RumbleCharts1 = require('../charts/01'),
+    RumbleCharts2 = require('../charts/02'),
+    Editor = require('../charts/editor');
 
 const images = _.assign(_.mapValues({
     title: require('../assets/title-slide.png'),
@@ -48,6 +54,7 @@ const images = _.assign(_.mapValues({
     marriage: require('../assets/marriage.jpg'),
     surprised: require('../assets/surprised-cat.jpg'),
     superman: require('../assets/superman.jpg'),
+    gift: require('../assets/gift.gif'),
 
     city: require('../assets/city.jpg'),
     kat: require('../assets/kat.png'),
@@ -111,6 +118,7 @@ class Presentation extends React.Component {
                         charts using React + D3
                     </Heading>
                     <Text margin='1em 0 0 0'>Alexey Volkov</Text>
+                    <Text margin='1em 0 0 0'>rosko.github.io/slides/</Text>
                     <Image width='45%' src={images.logo}/>
                 </Slide>
                 <Slide bgColor='quartenary'>
@@ -135,7 +143,7 @@ class Presentation extends React.Component {
                 </Slide>
                 <Slide {...defaultSlideProps} transition={['fade']}>
                     <Heading caps>Everybody</Heading>
-                    <Heading caps>saw</Heading>
+                    <Heading caps>has seen</Heading>
                     <Heading caps>charts</Heading>
                 </Slide>
                 <Slide {...defaultSlideProps} transition={['fade']}>
@@ -176,7 +184,7 @@ class Presentation extends React.Component {
                     <Heading size={2} fit caps>So, what</Heading>
                     <Heading size={2} fit caps>do we have?</Heading>
                 </Slide>
-                <Slide>
+                <Slide id='cloud'>
                     <Chart width={1000} height={700} series={seriesChartLibraries}>
                         <Transform method='transpose'>
                             <Cloud
@@ -335,7 +343,7 @@ class Presentation extends React.Component {
                 </Slide>
                 <Slide {...defaultSlideProps}>
                     <Heading caps>Remark #1</Heading>
-                    <Text>Usually React + D3 is next:</Text>
+                    <Text>Usually React + D3 means:</Text>
                     <CodePane
                         style={{fontSize:'3vh', height: '70vh'}}
                         lang='jsx'
@@ -408,7 +416,7 @@ class Presentation extends React.Component {
                     <Image width='90%' src={images.marriage}/>
                 </Slide>
                 <Slide bgColor='quartenary' transition={['zoom', 'fade']}>
-                    <Heading fit caps>Stop...</Heading>
+                    <Heading fit caps>Wait...</Heading>
                     <Appear>
                         <Heading fit>Let me google it for you</Heading>
                     </Appear>
@@ -425,17 +433,17 @@ class Presentation extends React.Component {
                 <Slide>
                     <Heading>d3-react-squared</Heading>
                     <GithubStars repo='bgrsquared/d3-react-squared'/>
-                    <div style={{width: '40vw', height: '60vh'}}>
-                        <D3ReactSquared />
-                    </div>
-                </Slide>
-                <Slide {...defaultSlideProps}>
-                    <Heading>d3-react-squared</Heading>
                     <CodePane
                         style={{fontSize:'3vh', lineHeight: 1, width: '90vw', maxHeight: '60vh'}}
                         lang='jsx'
                         source={require('raw!../assets/d3-react-squared.example')}
                     />
+                </Slide>
+                <Slide {...defaultSlideProps}>
+                    <Heading>d3-react-squared</Heading>
+                    <div style={{width: '40vw', height: '60vh'}}>
+                        <D3ReactSquared />
+                    </div>
                 </Slide>
                 <Slide {...defaultSlideProps}>
                     <Heading>d3act</Heading>
@@ -473,7 +481,7 @@ class Presentation extends React.Component {
 
                 <Slide bgColor='quartenary' transition={['zoom', 'fade']}>
                     <Heading fit caps>2. D3 makes virtual DOM</Heading>
-                    <Appear><Image width='70%' src={images.surprised} /></Appear>
+                    <Appear><Image width='70%' src={images.surprised}/></Appear>
                 </Slide>
                 <Slide {...defaultSlideProps}>
                     <Heading>react-faux-dom</Heading>
@@ -502,17 +510,124 @@ class Presentation extends React.Component {
                 </Slide>
 
                 <Slide bgColor='quartenary' transition={['zoom', 'fade']}>
-                    <Heading fit caps>3. True way</Heading>
-                    <Image width='50%' src={images.superman} />
+                    <Heading fit caps>3. The true way</Heading>
+                    <Image width='50%' src={images.superman}/>
                 </Slide>
                 <Slide {...defaultSlideProps}>
-                    <Heading>react-d3-components</Heading>
+                    <Heading fit>react-d3-components</Heading>
                     <GithubStars repo='codesuki/react-d3-components'/>
                     <CodePane
                         style={{fontSize:'3vh', lineHeight: 1, width: '90vw', maxHeight: '60vh'}}
                         lang='jsx'
-                        source={require('raw!../assets/d3-react-sparkline.example')}
+                        source={require('raw!../assets/react-d3-components.example')}
                     />
+                </Slide>
+                <Slide {...defaultSlideProps}>
+                    <Heading fit>react-d3-components</Heading>
+                    <ReactD3Components />
+                </Slide>
+                <Slide {...defaultSlideProps}>
+                    <Heading fit>react-d3-components / PieChart</Heading>
+                    <CodePane
+                        style={{fontSize:'2.5vh', lineHeight: 1, width: '90vw', maxHeight: '60vh'}}
+                        lang='jsx'
+                        source={require('raw!../assets/react-d3-components-2.example')}
+                    />
+                </Slide>
+
+                <Slide {...defaultSlideProps}>
+                    <Heading>react-d3 / rd3</Heading>
+                    <Layout>
+                        <Fill>
+                            <GithubStars repo='esbullington/react-d3'/>
+                        </Fill>
+                        <Fill>
+                            <GithubStars repo='yang-wei/rd3'/>
+                        </Fill>
+                    </Layout>
+                    <CodePane
+                        style={{fontSize:'3vh', lineHeight: 1, width: '90vw', maxHeight: '60vh'}}
+                        lang='jsx'
+                        source={require('raw!../assets/react-d3.example')}
+                    />
+                </Slide>
+                <Slide {...defaultSlideProps}>
+                    <Heading>react-d3 / rd3</Heading>
+                    <ReactD3 />
+                </Slide>
+                <Slide {...defaultSlideProps}>
+                    <Heading>victory</Heading>
+                    <GithubStars repo='FormidableLabs/victory'/>
+                    <CodePane
+                        style={{fontSize:'3vh', lineHeight: 1, width: '90vw', maxHeight: '60vh'}}
+                        lang='jsx'
+                        source={require('raw!../assets/victory.example')}
+                    />
+                </Slide>
+                <Slide {...defaultSlideProps}>
+                    <Heading>victory</Heading>
+                    <Victory />
+                </Slide>
+
+                <Slide bgColor='quartenary' transition={['zoom', 'fade']}>
+                    <Heading fit>Each one could be better at</Heading>
+                    <List>
+                        <Appear><ListItem><Heading size={4}>
+                            composition
+                        </Heading></ListItem></Appear>
+                        <Appear><ListItem><Heading size={4}>
+                            configuration
+                        </Heading></ListItem></Appear>
+                    </List>
+                </Slide>
+
+                <Slide transition={['fade']}>
+                    <Image src={images.gift} width='70%'/>
+                </Slide>
+
+                <Slide {...defaultSlideProps} transition={['fade']}>
+                    <Heading>rumble-charts</Heading>
+                    <Layout>
+                        <Fill>
+                            <CodePane
+                                style={{fontSize:'3vh', lineHeight: 1, maxHeight: '60vh'}}
+                                lang='jsx'
+                                source={require('raw!../charts/01.example')}
+                            />
+                        </Fill>
+                        <Fill>
+                            <RumbleCharts1 />
+                        </Fill>
+                    </Layout>
+                </Slide>
+                <Slide {...defaultSlideProps} transition={['fade']}>
+                    <Heading>rumble-charts</Heading>
+                    <Layout>
+                        <Fill>
+                            <CodePane
+                                style={{fontSize:'3vh', lineHeight: 1, maxHeight: '60vh'}}
+                                lang='jsx'
+                                source={require('raw!../charts/02.example')}
+                            />
+                        </Fill>
+                        <Fill>
+                            <RumbleCharts2 />
+                        </Fill>
+                    </Layout>
+                </Slide >
+                <Slide {...defaultSlideProps} id='liveedit'>
+                    <Editor />
+                </Slide>
+
+                <Slide bgColor='quartenary' transition={['fade']}>
+                    <Heading><Code>npm install rumble-charts</Code></Heading>
+                    <Heading size={2}>rosko.github.io/slides/</Heading>
+                    <Heading fit textColor='primary'>Questions!</Heading>
+                </Slide>
+                <Slide id='last' bgColor='quartenary' transition={['fade']}>
+                    <Heading><Code>npm install --save rumble-charts</Code></Heading>
+                    <Heading size={2}>rosko.github.io/slides/</Heading>
+                    <Heading fit textColor='primary'>Questions!</Heading>
                 </Slide>
 
             </Deck>

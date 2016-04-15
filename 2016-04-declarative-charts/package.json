@@ -13,14 +13,20 @@
   "author": "Alexey Volkov <a@insvit.com>",
   "license": "MIT",
   "dependencies": {
+    "babel-standalone": "^6.7.4",
+    "codemirror": "^5.13.4",
     "d3-react-squared": "^0.3.6",
+    "json-loader": "^0.5.4",
     "lodash": "^4.10.0",
     "normalize.css": "4.1.1",
     "react": "^0.14.3",
+    "react-d3": "^0.4.0",
+    "react-d3-components": "^0.6.2",
     "react-dom": "^0.14.3",
     "react-frame-component": "^0.5.2",
     "rumble-charts": "^0.1.4",
-    "spectacle": "^1.0.0"
+    "spectacle": "^1.0.0",
+    "victory": "^0.5.1"
   },
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",

@@ -1,0 +1,31 @@
+const series = [{
+    data: [1, 2, 3]
+}, {
+    data: [5, 7, 11]
+}, {
+    data: [13, 17, 19]
+}];
+
+class Demo extends Component {
+  render() {
+    return <Chart width={400} height={400} series={series} minY={0}>
+      <Layer width='100%' height='80%' position='bottom center'>
+        <Bars
+          groupPadding='3%'
+          innerPadding='0.5%'
+        />
+        <Lines />
+        <Dots />
+        <Labels
+          label={({point}) => point.y}
+          dotStyle={{
+            alignmentBaseline:'after-edge',
+            textAnchor:'middle'
+          }}
+        />
+      </Layer>
+    </Chart>;
+  }
+}
+
+return <Demo />;

@@ -1,0 +1,13 @@
+const series = [{
+    data: [1, 2, 4]
+}];
+
+class Demo extends Component {
+  render() {
+    return <Chart width={400} height={400} series={series} minY={0}>
+      <Bars />
+    </Chart>;
+  }
+}
+
+return <Demo />;

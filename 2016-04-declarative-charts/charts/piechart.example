@@ -1,0 +1,15 @@
+const series = [{
+    data: [1, 2, 4]
+}];
+
+class Demo extends Component {
+  render() {
+    return <Chart width={400} height={400} series={series}>
+      <Transform method={['transpose', 'stack']}>
+        <Pies combined={true} />
+      </Transform>
+    </Chart>;
+  }
+}
+
+return <Demo />;

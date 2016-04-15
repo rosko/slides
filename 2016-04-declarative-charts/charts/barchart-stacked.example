@@ -1,0 +1,19 @@
+const series = [{
+    data: [1, 2, 3]
+//}, {
+//    data: [5, 7, 11]
+//}, {
+//    data: [13, 17, 19]
+}];
+
+class Demo extends Component {
+  render() {
+    return <Chart width={400} height={400} series={series}>
+      <Transform method={['transpose', 'stack']}>
+        <Bars combined={true} innerPadding='2%' />
+      </Transform>
+    </Chart>;
+  }
+}
+
+return <Demo />;

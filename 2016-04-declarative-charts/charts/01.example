@@ -1,0 +1,9 @@
+const series = [{
+    data: [1, 2, 4]
+}];
+
+<Chart width={400} height={400} series={series}>
+  <Transform method={['transpose', 'stack']}>
+    <Pies combined={true} innerRadius={100}/>
+  </Transform>
+</Chart>

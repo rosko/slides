@@ -1,0 +1,22 @@
+const series = [{
+    data: [1, 3, 2, 5, 7]
+}, {
+    data: [5, 11, 7, 13, 19]
+}, {
+    data: [13, 19, 17, 23, 29]
+}];
+
+class Demo extends Component {
+  render() {
+    return <Chart width={400} height={400} series={series} minY={0}>
+      <Transform method='stack' _method='stackNormalized'>
+        <RadialLines
+          asAreas={true}
+          innerRadius='33%'
+        />
+      </Transform>
+    </Chart>;
+  }
+}
+
+return <Demo />;

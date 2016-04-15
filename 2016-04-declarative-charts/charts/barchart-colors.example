@@ -1,0 +1,22 @@
+const series = [{
+    data: [1, 2, 3]
+}, {
+    data: [5, {y:7, color: 'violet'}, 11]
+}, {
+    data: [13, 17, 19]
+}];
+
+class Demo extends Component {
+  render() {
+    return <Chart width={400} height={400} series={series} minY={0}>
+      <Bars
+        colors='category10' // category20, category20b, category20c
+        // colors={['red', 'green', 'blue']}
+        innerPadding='0.5%'
+        groupPadding='3%'
+      />
+    </Chart>;
+  }
+}
+
+return <Demo />;

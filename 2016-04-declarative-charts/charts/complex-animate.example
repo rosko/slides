@@ -1,0 +1,59 @@
+const series = [{
+    data: [1, 2, 3]
+}, {
+    data: [5, 7, 11]
+}, {
+    data: [13, 17, 19]
+}];
+
+class Demo extends Component {
+  render() {
+    return <Chart onClick={this.updateSeries} width={400} height={400} series={this.state.series} minY={0}>
+      <Layer width='80%' height='80%' position='middle center'>
+        <Animate _ease='bounce' _ease='elastic'>
+        <Ticks
+          axis='y'
+          ticks={{maxTicks: 4}}
+          tickVisible={({tick}) => tick.y > 0}
+          lineLength='100%'
+          lineVisible={true}
+          lineStyle={{stroke:'lightgray'}}
+          labelStyle={{textAnchor:'end',alignmentBaseline:'middle',fontSize:'0.5em',fill:'lightgray'}}
+          labelAttributes={{x: -5}}
+        />
+        <Ticks
+          axis='x'
+          label={({tick}) => tick.x + 1}
+          labelStyle={{textAnchor:'middle',alignmentBaseline:'before-edge',fontSize:'0.5em',fill:'lightgray'}}
+          labelAttributes={{y: 3}}
+        />
+        <Bars
+          groupPadding='3%'
+          innerPadding='0.5%'
+        />
+        <Lines />
+        <Dots />
+        <Labels
+          label={({point}) => Math.round(point.y)}
+          dotStyle={{
+            alignmentBaseline:'after-edge',
+            textAnchor:'middle'
+          }}
+        />
+        </Animate>
+      </Layer>
+    </Chart>;
+  }
+  constructor() {
+    super();
+    this.state = {series};
+    this.updateSeries = () => {
+      const series = _.map(_.range(3), index => ({
+        data: _.map(_.range(3), index => Math.random() * 100)
+      }));
+      this.setState({series});
+    }
+  }
+}
+
+return <Demo />;

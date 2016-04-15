@@ -1,0 +1,12 @@
+<VictoryPie
+    padAngle={3}
+    style={{
+        labels: {
+            fill: 'white', fontSize: 12, fontWeight: 'bold'
+        }
+    }}
+    data={[
+        {x: '<5', y: 6279}, {x: '≥65', y: 7502}, ...
+    ]}
+    innerRadius={110}
+/>
