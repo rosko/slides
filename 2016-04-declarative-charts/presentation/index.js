@@ -119,8 +119,8 @@ class Presentation extends React.Component {
                     </Heading>
                     <Text margin='1em 0 0 0'>Alexey Volkov</Text>
                     <Text margin='1em 0 0 0'>
-                        <Link href='https://rosko.github.io/slides/'>
-                            https://rosko.github.io/slides/
+                        <Link href='http://bit.ly/fwd16-charts'>
+                            bit.ly/fwd16-charts
                         </Link>
                     </Text>
                     <Image width='45%' src={images.logo}/>
@@ -622,12 +622,12 @@ class Presentation extends React.Component {
 
                 <Slide bgColor='quartenary' transition={['fade']}>
                     <Heading><Code>npm install rumble-charts</Code></Heading>
-                    <Heading size={2} fit>https://rosko.github.io/slides/</Heading>
+                    <Heading size={2} fit>bit.ly/fwd16-charts</Heading>
                     <Heading fit textColor='primary'>Questions!</Heading>
                 </Slide>
                 <Slide id='last' bgColor='quartenary' transition={['fade']}>
                     <Heading><Code>npm install --save rumble-charts</Code></Heading>
-                    <Heading size={2} fit>https://rosko.github.io/slides/</Heading>
+                    <Heading size={2} fit>bit.ly/fwd16-charts</Heading>
                     <Heading fit textColor='primary'>Questions!</Heading>
                 </Slide>
 
