@@ -4,8 +4,8 @@ const _ = require('lodash'),
     React = require('react');
 
 const {
-    Appear, Code, CodePane, Deck, Fill, Heading, Image, Link, List, ListItem,
-    Layout, Slide, Spectacle, Text
+    Appear, BlockQuote, Cite, Code, CodePane, Deck, Fill, Heading, Image, Link, List, ListItem,
+    Layout, Quote, Slide, Spectacle, Text
 } = require('spectacle');
 
 import preloader from 'spectacle/lib/utils/preloader';
@@ -124,6 +124,13 @@ class Presentation extends React.Component {
                         </Link>
                     </Text>
                     <Image width='45%' src={images.logo}/>
+                </Slide>
+                <Slide {...defaultSlideProps} transition={['fade']} bgColor='quartenary'>
+                    <BlockQuote>
+                        <Quote>Veni, vidi, vici</Quote>
+                        <Quote>I came; I saw; I conquered</Quote>
+                        <Cite>Julius Caesar</Cite>
+                    </BlockQuote>
                 </Slide>
                 <Slide bgColor='quartenary'>
                     <Heading size={2} fit caps>
