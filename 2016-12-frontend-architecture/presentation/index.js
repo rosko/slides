@@ -92,7 +92,7 @@ Block.defaultProps = {
 const PageBlock = ({title}) => {
     return <Block borderColor='violet'>
         Page:
-        <Heading size={5}>{title}</Heading>
+        <Heading size={6}>{title}</Heading>
     </Block>;
 };
 PageBlock.propTypes = {
@@ -154,8 +154,8 @@ export default class Presentation extends React.Component {
                             without bugs
                         </Heading></Appear>
                         <Heading size={2} fit caps>
-                            <Appear><span>which may develop</span></Appear>
-                            <Appear><span> by your team </span></Appear>
+                            <Appear><span>which can be developed</span></Appear>
+                            <Appear><span> by your team</span></Appear>
                         </Heading>
                     </Slide>
                     <Slide transition={['fade']}>
@@ -227,10 +227,12 @@ export default class Presentation extends React.Component {
                         <Heading fit caps>lazy developer</Heading>
                         <List>
                             <Appear><ListItem>
-                                Good programmers spend much of the other 90% thinking, researching
+                                <strong>Good programmers</strong> spend much of 90% of their time
+                                <strong> thinking, researching</strong>
                             </ListItem></Appear>
                             <Appear><ListItem>
-                                Bad programmers spend much of that 90% debugging code by randomly making changes and
+                                <strong>Bad programmers</strong> spend much of 90% of their time
+                                <strong> debugging code</strong> by randomly making changes and
                                 seeing if they work
                             </ListItem></Appear>
                         </List>
@@ -798,8 +800,8 @@ export default class Presentation extends React.Component {
                         <CodePane
                             lang='javascript'
                             textSize='0.9em'
-                            source={`import package from './user';
-const { components, dataServices } = package;
+                            source={`import userPackage from './packages/user';
+const { components, dataServices } = userPackage;
 
 app.router.register('/orders', components['OrdersPage']);
 app.assets.register('header', components['LoginWidget']);
