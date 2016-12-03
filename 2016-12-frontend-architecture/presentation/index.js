@@ -128,7 +128,7 @@ export default class Presentation extends React.Component {
                         </Heading>
                     </Slide>
                     <Slide>
-                        <Heading textColor='quartenary'>Yo, who are you?</Heading>
+                        <Heading textColor='quartenary'>Yo! Who are you?</Heading>
                         <Heading size={2} margin='0.5em 0 0 0'>Alexey Volkov</Heading>
                         <Image width='45%' src={images.logo}/>
                         <Heading size={4} margin='0.5em 0 0 0'>
@@ -205,7 +205,7 @@ export default class Presentation extends React.Component {
                         <Heading fit>Issue: over-engineering</Heading>
                         <List>
                             <Appear><ListItem><Heading size={4}>
-                                Infinity layers of abstraction
+                                Infinite layers of abstraction
                             </Heading></ListItem></Appear>
                             <Appear><ListItem><Heading size={4}>
                                 Dogmatic usage of patterns
@@ -227,11 +227,11 @@ export default class Presentation extends React.Component {
                         <Heading fit caps>lazy developer</Heading>
                         <List>
                             <Appear><ListItem>
-                                <strong>Good programmers</strong> spend much of 90% of their time
+                                <strong>Good programmers</strong> spend 90% of their time
                                 <strong> thinking, researching</strong>
                             </ListItem></Appear>
                             <Appear><ListItem>
-                                <strong>Bad programmers</strong> spend much of 90% of their time
+                                <strong>Bad programmers</strong> spend 90% of their time
                                 <strong> debugging code</strong> by randomly making changes and
                                 seeing if they work
                             </ListItem></Appear>
