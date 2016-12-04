@@ -875,7 +875,32 @@ app.httpRequest.registerDefaultParams(() => {
                         </List>
                     </Slide>
                     <Slide bgColor='quartenary'>
-
+                        <List>
+                            <Appear><ListItem><Heading size={5}>
+                                Proxy (module/package connector)
+                            </Heading></ListItem></Appear>
+                            <Appear><ListItem><Heading size={5}>
+                                Facade (app)
+                            </Heading></ListItem></Appear>
+                            <Appear><ListItem><Heading size={5}>
+                                Mediator (app)
+                            </Heading></ListItem></Appear>
+                            <Appear><ListItem><Heading size={5}>
+                                Observer (pub-sub)
+                            </Heading></ListItem></Appear>
+                            <Appear><ListItem><Heading size={5}>
+                                Adapter (data layer)
+                            </Heading></ListItem></Appear>
+                            <Appear><ListItem><Heading size={5}>
+                                JavaScript Module Pattern (common js / es6 modules)
+                            </Heading></ListItem></Appear>
+                            <Appear><ListItem><Heading size={5}>
+                                Portlet (widgets)
+                            </Heading></ListItem></Appear>
+                            <Appear><ListItem><Heading size={5}>
+                                Cross-Browser Component (http request)
+                            </Heading></ListItem></Appear>
+                        </List>
                     </Slide>
                     <Slide {...defaultSlideProps}>
                         <Image width='100%' src={images.iss}/>
